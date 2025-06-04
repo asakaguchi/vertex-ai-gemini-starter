@@ -63,6 +63,10 @@ gcloud services enable aiplatform.googleapis.com
 gcloud auth application-default login --force
 ```
 
+## 📖 ドキュメント
+
+- [クイックスタートガイド](docs/quickstart.md) - 詳細な導入手順とトラブルシューティング
+
 ## 📝 ライセンス
 
 社内利用のため、ライセンスは設定していません。
