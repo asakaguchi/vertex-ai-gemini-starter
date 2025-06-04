@@ -1,0 +1,21 @@
+[project]
+name = "vertex-ai-gemini-starter"
+version = "0.1.0"
+description = "Vertex AI Gemini API スターターキット"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "google-cloud-aiplatform>=1.38",
+    "python-dotenv>=1.0.0",
+    "rich>=13.0.0",  # きれいな出力のため
+]
+
+[tool.uv]
+dev-dependencies = [
+    "ipython>=8.0.0",
+    "pytest>=7.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
