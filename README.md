@@ -6,14 +6,14 @@ Vertex AI 経由で Gemini API を使い始めるためのテンプレートリ�
 
 **重要な特徴：API キーやサービスアカウントキーを一切使用しません。**
 
-このプロジェクトは、Google が推奨する **Application Default Credentials (ADC)** を使用した安全な設計です：
+このプロジェクトは、Google が推奨する **Application Default Credentials (ADC)** を使用した安全な設計です。
 
 - ✅ **ゼロキー設計**: API キーやサービスアカウントキーが不要
 - ✅ **個人認証**: 各開発者が自分の Google アカウントで安全に認証
 - ✅ **誤コミット防止**: キーファイルの Git 誤コミットリスクを完全に排除
 - ✅ **エンタープライズ対応**: 企業のセキュリティポリシーにも準拠
 
-詳細は [クイックスタートガイド](docs/quickstart.md) をご覧ください。
+詳細は [クイックスタートガイド](docs/quickstart.md) を参照してください。
 
 ## 🚀 クイックスタート
 
@@ -48,17 +48,17 @@ gcloud auth application-default login
 
 ```bash
 # シンプルなチャット
-python examples/simple_chat.py
-# または: uv run python examples/simple_chat.py
+uv run python examples/simple_chat.py
+# または: python examples/simple_chat.py
 
 # 画像解析
-python examples/image_analysis.py --image-uri gs://your-bucket/image.jpg
+uv run python examples/image_analysis.py --image-uri gs://your-bucket/image.jpg
 
 # ストリーミングチャット
-python examples/streaming_chat.py
+uv run python examples/streaming_chat.py
 
 # モデル可用性チェック
-python -m vertex_ai_gemini.models
+uv run python -m vertex_ai_gemini.models
 ```
 
 ## 📋 前提条件
