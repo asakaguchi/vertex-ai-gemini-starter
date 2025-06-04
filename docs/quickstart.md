@@ -1,4 +1,4 @@
-# Vertex AI Gemini API を始めよう！社内向けクイックスタートガイド
+# Vertex AI Gemini API を始めよう！クイックスタートガイド
 
 最近話題のGemini、使ってみたいけど何から始めればいいか分からない...そんな声をよく聞きます。このガイドでは、macOSでVertex AI経由のGemini APIを使い始めるための最小限の手順をまとめました。
 
@@ -84,13 +84,26 @@ cd vertex-ai-gemini-starter
 vertex-ai-gemini-starter/
 ├── .gitignore
 ├── README.md
+├── LICENSE
+├── setup.py            # パッケージ設定
+├── requirements.txt    # 依存関係
 ├── pyproject.toml      # uvの設定ファイル
 ├── .env.example        # 環境変数のサンプル
-└── src/
-    ├── __init__.py
-    ├── simple_chat.py  # シンプルなチャット
-    ├── image_analysis.py # 画像解析
-    └── streaming_chat.py # ストリーミングチャット
+├── vertex_ai_gemini/   # メインパッケージ
+│   ├── __init__.py
+│   ├── chat.py         # シンプルなチャット
+│   ├── streaming.py    # ストリーミングチャット
+│   ├── vision.py       # 画像解析
+│   └── models.py       # モデル確認
+├── examples/           # 実行可能なサンプル
+│   ├── simple_chat.py
+│   ├── streaming_chat.py
+│   └── image_analysis.py
+├── tests/              # テストファイル
+│   ├── __init__.py
+│   └── context.py
+└── docs/
+    └── quickstart.md
 ```
 
 セットアップは超簡単です。
@@ -104,14 +117,15 @@ cp .env.example .env
 uv sync
 
 # サンプルを実行
-uv run python src/simple_chat.py
+python examples/simple_chat.py
+# または: uv run python examples/simple_chat.py
 ```
 
 たったこれだけで、Geminiと会話ができるようになります。
 
 ## サンプルコードの中身
 
-### シンプルなチャット（src/simple_chat.py）
+### シンプルなチャット（examples/simple_chat.py）
 
 ```python
 import os
@@ -150,6 +164,7 @@ requires-python = ">=3.9"
 dependencies = [
     "google-cloud-aiplatform>=1.38",
     "python-dotenv>=1.0.0",
+    "rich>=13.0.0",
 ]
 
 [tool.uv]
@@ -196,12 +211,17 @@ gcloud auth application-default login
 
 【画像解析を試す】
 ```bash
-uv run python src/image_analysis.py --image-url gs://your-bucket/photo.jpg
+python examples/image_analysis.py --image-uri gs://your-bucket/photo.jpg
 ```
 
 【ストリーミングチャットを試す】
 ```bash
-uv run python src/streaming_chat.py
+python examples/streaming_chat.py
+```
+
+【モデル可用性チェック】
+```bash
+python -m vertex_ai_gemini.models
 ```
 
 リアルタイムで回答が表示されるので、体感速度が全然違います。
@@ -232,9 +252,8 @@ uv run ipython
 
 ```python
 # iPython内で
-from src.simple_chat import model
-response = model.generate_content("テスト")
-response?  # オブジェクトの詳細を表示
+from vertex_ai_gemini import simple_chat
+# モジュールとして使用する場合の例
 ```
 
 ## 次のステップ
@@ -257,9 +276,10 @@ Vertex AI Gemini APIは、uvとGitHubテンプレートを使えば本当に簡�
 
 きっと「え、こんなに簡単なの？」と驚くはずです。
 
-何か分からないことがあれば、気軽にSlackで聞いてくださいね。みんなで一緒にAIを活用していきましょう！
+何か分からないことがあれば、GitHub Issuesやコミュニティで聞いてください。みんなで一緒にAIを活用していきましょう！
 
 【テンプレートリポジトリ】
-https://github.com/your-org/vertex-ai-gemini-starter
 
-（※実際のURLに置き換えてください）
+[GitHub リポジトリ](https://github.com/asakaguchi/vertex-ai-gemini-starter)
+
+テンプレートとして使用する場合は、上記ページで「Use this template」ボタンをクリックしてください。
