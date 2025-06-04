@@ -19,7 +19,7 @@ Vertex AI 経由で Gemini API を使い始めるためのテンプレートリ�
 
 ### 1. このテンプレートを使う
 
-GitHub で「Use this template」ボタンをクリックして、自分のリポジトリを作成してください。
+GitHub リポジトリページの画面右上にある緑色の「Use this template」ボタンをクリックして、「Create a new repository」を選択し、自分のリポジトリを作成してください。
 
 ### 2. クローンして環境構築
 

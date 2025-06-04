@@ -95,7 +95,9 @@ gcloud auth application-default login
 
 ```bash
 # テンプレートから新しいリポジトリを作成
-# GitHubで「Use this template」ボタンをクリック
+# 1. GitHubリポジトリページの画面右上にある緑色の「Use this template」ボタンをクリック
+# 2. 「Create a new repository」をクリック
+# 3. リポジトリ名を入力して「Create repository」をクリック
 
 # クローンしたら
 cd vertex-ai-gemini-starter
@@ -260,4 +262,4 @@ Vertex AI Gemini API は、uv と GitHub テンプレートを使えば本当に
 
 [GitHub リポジトリ](https://github.com/asakaguchi/vertex-ai-gemini-starter)
 
-テンプレートとして使用する場合は、上記ページで「Use this template」ボタンをクリックしてください。
+テンプレートとして使用する場合は、上記ページの画面右上にある緑色の「Use this template」ボタンをクリックして、「Create a new repository」を選択してください。
