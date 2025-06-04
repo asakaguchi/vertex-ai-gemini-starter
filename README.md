@@ -69,4 +69,4 @@ gcloud auth application-default login --force
 
 ## 📝 ライセンス
 
-社内利用のため、ライセンスは設定していません。
+MIT License - 詳細は [LICENSE](LICENSE) ファイルを参照してください。
