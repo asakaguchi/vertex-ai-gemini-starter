@@ -20,10 +20,10 @@ gcloud auth application-default login
 gcloud services enable aiplatform.googleapis.com
 
 # 例の実行
-uv run python src/simple_chat.py
-uv run python src/streaming_chat.py
-uv run python src/image_analysis.py --image-uri gs://bucket/image.jpg
-uv run python src/check_models.py
+python examples/simple_chat.py
+python examples/streaming_chat.py
+python examples/image_analysis.py --image-uri gs://bucket/image.jpg
+python -m vertex_ai_gemini.models
 
 # 開発用
 uv add <package>        # 依存関係の追加
@@ -32,12 +32,15 @@ uv run pytest          # テスト実行（存在する場合）
 
 ## アーキテクチャ
 
-プロジェクトは4つの主要コンポーネントからなるモジュラーアーキテクチャに従います：
+プロジェクトはThe Hitchhiker's Guide to Pythonの推奨構造に従います：
 
-- **simple_chat.py**: Geminiとの基本的な単発Q&A
-- **streaming_chat.py**: リアルタイムストリーミングによるインタラクティブなマルチターン会話
-- **image_analysis.py**: Geminiを使用した画像解析のビジョン機能
-- **check_models.py**: 異なるGeminiモデルの利用可能性をテストするユーティリティ
+- **vertex_ai_gemini/**: メインパッケージディレクトリ
+  - **chat.py**: Geminiとの基本的な単発Q&A
+  - **streaming.py**: リアルタイムストリーミングによるインタラクティブなマルチターン会話
+  - **vision.py**: Geminiを使用した画像解析のビジョン機能
+  - **models.py**: 異なるGeminiモデルの利用可能性をテストするユーティリティ
+- **examples/**: 実行可能なサンプルスクリプト
+- **tests/**: テストファイルとテスト用コンテキスト
 
 すべてのモジュールは共通パターンを共有します：
 

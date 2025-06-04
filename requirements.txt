@@ -1,0 +1,8 @@
+# Core dependencies
+google-cloud-aiplatform>=1.38
+python-dotenv>=1.0.0
+rich>=13.0.0
+
+# Development dependencies (install with pip install -r requirements-dev.txt)
+# ipython
+# pytest
