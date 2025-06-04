@@ -2,6 +2,7 @@
 Vertex AI Gemini API で画像を解析する
 """
 import os
+import sys
 import argparse
 from dotenv import load_dotenv
 import vertexai
@@ -17,14 +18,31 @@ def analyze_image(image_uri: str, prompt: str = None):
     # 設定を環境変数から取得
     project_id = os.getenv("GCP_PROJECT_ID")
     location = os.getenv("GCP_LOCATION", "us-central1")
+    model_name = os.getenv("GEMINI_MODEL")
     
+    # 必須設定のチェック
     if not project_id:
         console.print("[red]エラー: GCP_PROJECT_ID が設定されていません。[/red]")
-        return
+        console.print(".env ファイルに以下を追加してください。")
+        console.print("[dim]GCP_PROJECT_ID=your-project-id[/dim]\n")
+        sys.exit(1)
     
-    # Vertex AI を初期化（マルチモーダル対応モデルを使用）
+    if not model_name:
+        console.print("[red]エラー: GEMINI_MODEL が設定されていません。[/red]")
+        console.print(".env ファイルに以下を追加してください。")
+        console.print("[dim]GEMINI_MODEL=gemini-1.5-flash-002[/dim]\n")
+        console.print("画像解析には以下のモデルがおすすめです。")
+        console.print("- gemini-1.5-pro-002（高精度）")
+        console.print("- gemini-1.5-flash-002（高速）")
+        console.print("- gemini-2.0-flash-001（最新版）\n")
+        console.print("利用可能なモデルを確認するには：")
+        console.print("[cyan]uv run python src/check_models.py[/cyan]\n")
+        sys.exit(1)
+    
+    # Vertex AI を初期化
+    console.print(f"[dim]使用モデル: {model_name}[/dim]")
     vertexai.init(project=project_id, location=location)
-    model = GenerativeModel("gemini-1.5-pro-001")
+    model = GenerativeModel(model_name)
     
     # デフォルトのプロンプト
     if prompt is None:

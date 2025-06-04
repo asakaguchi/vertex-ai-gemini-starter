@@ -2,6 +2,7 @@
 Vertex AI Gemini API でストリーミングチャット
 """
 import os
+import sys
 from dotenv import load_dotenv
 import vertexai
 from vertexai.generative_models import GenerativeModel
@@ -19,11 +20,22 @@ def streaming_chat():
     # 設定を環境変数から取得
     project_id = os.getenv("GCP_PROJECT_ID")
     location = os.getenv("GCP_LOCATION", "us-central1")
-    model_name = os.getenv("GEMINI_MODEL", "gemini-1.5-flash-001")
+    model_name = os.getenv("GEMINI_MODEL")
     
+    # 必須設定のチェック
     if not project_id:
         console.print("[red]エラー: GCP_PROJECT_ID が設定されていません。[/red]")
-        return
+        console.print(".env ファイルに以下を追加してください。")
+        console.print("[dim]GCP_PROJECT_ID=your-project-id[/dim]\n")
+        sys.exit(1)
+    
+    if not model_name:
+        console.print("[red]エラー: GEMINI_MODEL が設定されていません。[/red]")
+        console.print(".env ファイルに以下を追加してください。")
+        console.print("[dim]GEMINI_MODEL=gemini-1.5-flash-002[/dim]\n")
+        console.print("利用可能なモデルを確認するには：")
+        console.print("[cyan]uv run python src/check_models.py[/cyan]\n")
+        sys.exit(1)
     
     # Vertex AI を初期化
     vertexai.init(project=project_id, location=location)
@@ -32,7 +44,7 @@ def streaming_chat():
     # チャットセッションを開始
     chat = model.start_chat()
     
-    console.print("[bold cyan]Gemini とのチャットを開始します[/bold cyan]")
+    console.print(f"[bold cyan]Gemini ({model_name}) とのチャットを開始します[/bold cyan]")
     console.print("終了するには 'exit' または 'quit' と入力してください\n")
     
     while True:
