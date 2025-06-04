@@ -67,13 +67,15 @@ def analyze_image(image_uri: str, prompt: str = None):
         console.print("- 画像は Cloud Storage にアップロードされている必要があります")
         console.print("- サービスアカウントに「ストレージ オブジェクト閲覧者」権限が必要です")
 
+
 def main():
     """メイン処理"""
     parser = argparse.ArgumentParser(description="画像を Gemini で解析します")
     parser.add_argument(
         "--image-uri",
         required=True,
-        help="Cloud Storage の画像URI (例: gs://bucket/image.jpg)"
+        help=("Cloud Storage の画像URI "
+              "(例: gs://bucket/image.jpg)")
     )
     parser.add_argument(
         "--prompt",

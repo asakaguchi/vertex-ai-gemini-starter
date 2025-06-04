@@ -59,7 +59,7 @@ def main():
             console.print("\n[yellow]ヒント:[/yellow]")
             console.print("- 指定されたモデルが存在しない可能性があります")
             console.print("- 利用可能なモデルを確認してください：")
-            console.print("  [cyan]uv run python src/check_models.py[/cyan]")
+            console.print("  [cyan]python -m vertex_ai_gemini.models[/cyan]")
 
 if __name__ == "__main__":
     main()

@@ -72,6 +72,7 @@ def streaming_chat():
         except Exception as e:
             console.print(f"\n[red]エラーが発生しました: {e}[/red]")
 
+
 def main():
     """メイン処理"""
     try:

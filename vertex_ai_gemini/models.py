@@ -13,7 +13,14 @@ load_dotenv()
 console = Console()
 
 def check_models():
-    """利用可能なモデルをテストする"""
+    """利用可能なGeminiモデルをテストする.
+    
+    定義済みのモデルリストに対して実際に問い合わせを送信し、
+    各モデルの可用性を確認してテーブル形式で結果を表示する.
+    
+    Returns:
+        None: 結果は標準出力に表示される.
+    """
     # 設定を環境変数から取得
     project_id = os.getenv("GCP_PROJECT_ID")
     location = os.getenv("GCP_LOCATION", "us-central1")
@@ -28,8 +35,7 @@ def check_models():
     
     vertexai.init(project=project_id, location=location)
     
-    # テストするモデル一覧
-    # 2025年06月04日時点の最新モデルを含むリスト
+    # テストするモデル一覧 (2025年6月時点)
     test_models = [
         "gemini-2.5-pro-preview-05-06",
         "gemini-2.5-flash-preview-04-17",
@@ -61,7 +67,8 @@ def check_models():
                 console.print("[yellow]? 応答なし[/yellow]")
                 results.append((model_name, "? 応答なし", "yellow"))
         except Exception as e:
-            error_msg = str(e).split('\n')[0]  # エラーメッセージの最初の行のみ
+            # エラーメッセージの最初の行のみ
+            error_msg = str(e).split('\n')[0]
             if "404" in error_msg:
                 console.print("[red]✗ 利用不可[/red]")
                 results.append((model_name, "✗ 利用不可", "red"))
@@ -91,6 +98,7 @@ def check_models():
     else:
         console.print("\n[red]利用可能なモデルが見つかりませんでした。[/red]")
         console.print("[yellow]プロジェクトの設定や権限を確認してください。[/yellow]")
+
 
 def main():
     """メイン処理"""

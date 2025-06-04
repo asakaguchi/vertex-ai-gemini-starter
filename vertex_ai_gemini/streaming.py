@@ -16,7 +16,14 @@ load_dotenv()
 console = Console()
 
 def streaming_chat():
-    """ストリーミング対応のチャット"""
+    """ストリーミング対応のチャット.
+    
+    環境変数から設定を読み込んでGeminiとの対話セッションを開始し、
+    リアルタイムでレスポンスを表示する.
+    
+    Returns:
+        None: インタラクティブセッションを実行.
+    """
     # 設定を環境変数から取得
     project_id = os.getenv("GCP_PROJECT_ID")
     location = os.getenv("GCP_LOCATION", "us-central1")
@@ -34,7 +41,7 @@ def streaming_chat():
         console.print(".env ファイルに以下を追加してください。")
         console.print("[dim]GEMINI_MODEL=gemini-1.5-flash-002[/dim]\n")
         console.print("利用可能なモデルを確認するには：")
-        console.print("[cyan]uv run python src/check_models.py[/cyan]\n")
+        console.print("[cyan]python -m vertex_ai_gemini.models[/cyan]\n")
         sys.exit(1)
     
     # Vertex AI を初期化
@@ -71,6 +78,7 @@ def streaming_chat():
             
         except Exception as e:
             console.print(f"\n[red]エラーが発生しました: {e}[/red]")
+
 
 def main():
     """メイン処理"""

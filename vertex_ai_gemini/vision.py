@@ -14,7 +14,16 @@ load_dotenv()
 console = Console()
 
 def analyze_image(image_uri: str, prompt: str = None):
-    """画像を解析する"""
+    """画像を解析する.
+    
+    Args:
+        image_uri (str): Cloud Storageの画像URI (例: gs://bucket/image.jpg)
+        prompt (str, optional): カスタムプロンプト. 
+                               省略時はデフォルトプロンプトを使用.
+    
+    Returns:
+        None: 結果は標準出力に表示される.
+    """
     # 設定を環境変数から取得
     project_id = os.getenv("GCP_PROJECT_ID")
     location = os.getenv("GCP_LOCATION", "us-central1")
@@ -36,7 +45,7 @@ def analyze_image(image_uri: str, prompt: str = None):
         console.print("- gemini-1.5-flash-002（高速）")
         console.print("- gemini-2.0-flash-001（最新版）\n")
         console.print("利用可能なモデルを確認するには：")
-        console.print("[cyan]uv run python src/check_models.py[/cyan]\n")
+        console.print("[cyan]python -m vertex_ai_gemini.models[/cyan]\n")
         sys.exit(1)
     
     # Vertex AI を初期化
@@ -66,6 +75,7 @@ def analyze_image(image_uri: str, prompt: str = None):
         console.print("[yellow]ヒント:[/yellow]")
         console.print("- 画像は Cloud Storage にアップロードされている必要があります")
         console.print("- サービスアカウントに「ストレージ オブジェクト閲覧者」権限が必要です")
+
 
 def main():
     """メイン処理"""

@@ -21,7 +21,7 @@ from .models import check_models
 
 __all__ = [
     "simple_chat",
-    "streaming_chat", 
+    "streaming_chat",
     "analyze_image",
-    "check_models"
+    "check_models",
 ]
