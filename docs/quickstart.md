@@ -4,6 +4,29 @@
 
 GitHubテンプレートリポジトリも用意したので、コピーして5分で動かせます。難しく考える必要はありません。
 
+## 🔒 セキュリティを重視した設計
+
+**このプロジェクトの重要な特徴：APIキーやサービスアカウントキーを一切使用しません。**
+
+### なぜキーファイルを使わないのか？
+
+従来の多くのチュートリアルでは、サービスアカウントキー（JSONファイル）やAPIキーを使用していますが、これには以下のリスクがあります：
+
+- ❌ **誤コミットリスク**: キーファイルをGitに誤ってコミットしてしまう危険性
+- ❌ **キー管理の複雑さ**: キーの配布、ローテーション、削除の管理が煩雑
+- ❌ **共有時の漏洩リスク**: チームでファイル共有する際の情報漏洩リスク
+
+### このプロジェクトの安全なアプローチ
+
+代わりに、Googleが推奨する **Application Default Credentials (ADC)** を使用します：
+
+- ✅ **ゼロキー設計**: APIキーやサービスアカウントキーが不要
+- ✅ **個人認証**: 各開発者が自分のGoogleアカウントで安全に認証
+- ✅ **自動認証**: `gcloud auth application-default login`で一度設定すれば完了
+- ✅ **エンタープライズ対応**: 企業のセキュリティポリシーにも準拠
+
+この方式により、**セキュリティを犠牲にすることなく、簡単にVertex AI Gemini APIを使い始められます**。
+
 ## まずはVertex AI Gemini APIって何？
 
 簡単に言うと、GoogleのAIモデル「Gemini」を自分のプログラムから使えるようにするサービスです。チャットボットを作ったり、画像を解析したり、いろんなことができます。
@@ -80,7 +103,7 @@ cd vertex-ai-gemini-starter
 
 プロジェクト構成はこんな感じです。
 
-```
+```text
 vertex-ai-gemini-starter/
 ├── .gitignore
 ├── README.md
@@ -210,16 +233,19 @@ gcloud auth application-default login
 テンプレートリポジトリには、他にも楽しいサンプルを入れています。
 
 【画像解析を試す】
+
 ```bash
 python examples/image_analysis.py --image-uri gs://your-bucket/photo.jpg
 ```
 
 【ストリーミングチャットを試す】
+
 ```bash
 python examples/streaming_chat.py
 ```
 
 【モデル可用性チェック】
+
 ```bash
 python -m vertex_ai_gemini.models
 ```
@@ -261,11 +287,13 @@ from vertex_ai_gemini import simple_chat
 ここまでできたら、基本的な使い方はマスターです。テンプレートリポジトリをベースに、自分のアプリケーションを作ってみましょう。
 
 【挑戦してみたいこと】
+
 - Function Calling（外部ツールとの連携）
 - RAG（検索拡張生成）の実装
 - Slackボットへの組み込み
 
 【本番環境への展開】
+
 - Cloud Runへのデプロイ
 - GitHub Actionsでの自動テスト
 - エラーモニタリングの設定
