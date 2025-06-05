@@ -63,7 +63,7 @@ gcloud init
 
 プロジェクトを選択する画面が出てきますので、使いたいプロジェクトを選んでください。
 
-## 3 ステップで始める Vertex AI Gemini API
+## 4 ステップで始める Vertex AI Gemini API
 
 ### ステップ 1：サービスアカウントを作る
 
@@ -93,7 +93,17 @@ gcloud auth application-default login
 【ちょっとした補足】
 この設定により、コード内に認証情報を書く必要がなくなります。セキュリティ的にも安心ですね。認証情報は `~/.config/gcloud/` に保存されます。
 
-### ステップ 3：テンプレートリポジトリで即座に試す
+### ステップ 3：Vertex AI API の有効化
+
+Google Cloud プロジェクトで Vertex AI API を有効にします。これも 1 つのコマンドで完了します。
+
+```bash
+gcloud services enable aiplatform.googleapis.com
+```
+
+このコマンドで、プロジェクトで Vertex AI Gemini API が使用できるようになります。
+
+### ステップ 4：テンプレートリポジトリで即座に試す
 
 面倒な設定は抜きにして、すぐに動かしたいですよね。GitHub テンプレートリポジトリを用意しました。
 
@@ -208,7 +218,13 @@ dev-dependencies = [
 
 ### 「API が有効になっていません」エラー
 
-これ、本当によく忘れます。Google Cloud Console で「API とサービス」→「ライブラリ」から「Vertex AI API」を検索して有効にしてください。
+これ、本当によく忘れます。以下のコマンドで Vertex AI API を有効にできます。
+
+```bash
+gcloud services enable aiplatform.googleapis.com
+```
+
+もしくは、Google Cloud Console で「API とサービス」→「ライブラリ」から「Vertex AI API」を検索して有効にすることもできます。
 
 ### プロジェクト ID が分からない
 
