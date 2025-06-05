@@ -5,8 +5,8 @@
   "elements": [
     {
       "type": "text",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 28,
+      "versionNonce": 1264927192,
       "isDeleted": false,
       "id": "title-main",
       "fillStyle": "hachure",
@@ -26,7 +26,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1,
+      "updated": 1749106109431,
       "link": null,
       "locked": false,
       "fontSize": 28,
@@ -37,12 +37,14 @@
       "containerId": null,
       "originalText": "図3: 実際の認証フロー（8ステップ）",
       "lineHeight": 1.25,
-      "baseline": 25
+      "baseline": 25,
+      "index": "a0",
+      "autoResize": true
     },
     {
       "type": "rectangle",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 4,
+      "versionNonce": 2045405096,
       "isDeleted": false,
       "id": "step12-box",
       "fillStyle": "solid",
@@ -58,20 +60,23 @@
       "width": 200,
       "height": 120,
       "seed": 3002,
-      "groupIds": ["step12-group"],
+      "groupIds": [
+        "step12-group"
+      ],
       "frameId": null,
       "roundness": {
         "type": 3
       },
-      "boundElements": ["arrow-12-34"],
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1749106109431,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "a1"
     },
     {
       "type": "text",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 4,
+      "versionNonce": 1041188568,
       "isDeleted": false,
       "id": "step12-text1",
       "fillStyle": "hachure",
@@ -87,11 +92,13 @@
       "width": 120,
       "height": 25,
       "seed": 3003,
-      "groupIds": ["step12-group"],
+      "groupIds": [
+        "step12-group"
+      ],
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1,
+      "updated": 1749106109431,
       "link": null,
       "locked": false,
       "fontSize": 18,
@@ -102,12 +109,14 @@
       "containerId": null,
       "originalText": "ステップ1-2",
       "lineHeight": 1.25,
-      "baseline": 17
+      "baseline": 17,
+      "index": "a2",
+      "autoResize": true
     },
     {
       "type": "text",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 4,
+      "versionNonce": 1653551784,
       "isDeleted": false,
       "id": "step12-text2",
       "fillStyle": "hachure",
@@ -123,11 +132,13 @@
       "width": 140,
       "height": 20,
       "seed": 3004,
-      "groupIds": ["step12-group"],
+      "groupIds": [
+        "step12-group"
+      ],
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1,
+      "updated": 1749106109431,
       "link": null,
       "locked": false,
       "fontSize": 16,
@@ -138,12 +149,14 @@
       "containerId": null,
       "originalText": "初回ログイン",
       "lineHeight": 1.25,
-      "baseline": 14
+      "baseline": 14,
+      "index": "a3",
+      "autoResize": true
     },
     {
       "type": "text",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 4,
+      "versionNonce": 925936600,
       "isDeleted": false,
       "id": "step12-text3",
       "fillStyle": "hachure",
@@ -159,11 +172,13 @@
       "width": 180,
       "height": 40,
       "seed": 3005,
-      "groupIds": ["step12-group"],
+      "groupIds": [
+        "step12-group"
+      ],
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1,
+      "updated": 1749106109431,
       "link": null,
       "locked": false,
       "fontSize": 12,
@@ -174,12 +189,14 @@
       "containerId": null,
       "originalText": "$ gcloud auth\napplication-default\nlogin",
       "lineHeight": 1.25,
-      "baseline": 36
+      "baseline": 36,
+      "index": "a4",
+      "autoResize": true
     },
     {
       "type": "rectangle",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 4,
+      "versionNonce": 308452776,
       "isDeleted": false,
       "id": "step34-box",
       "fillStyle": "solid",
@@ -195,20 +212,23 @@
       "width": 200,
       "height": 120,
       "seed": 3006,
-      "groupIds": ["step34-group"],
+      "groupIds": [
+        "step34-group"
+      ],
       "frameId": null,
       "roundness": {
         "type": 3
       },
-      "boundElements": ["arrow-12-34", "arrow-34-57"],
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1749106109431,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "a5"
     },
     {
       "type": "text",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 4,
+      "versionNonce": 819818712,
       "isDeleted": false,
       "id": "step34-text1",
       "fillStyle": "hachure",
@@ -224,11 +244,13 @@
       "width": 120,
       "height": 25,
       "seed": 3007,
-      "groupIds": ["step34-group"],
+      "groupIds": [
+        "step34-group"
+      ],
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1,
+      "updated": 1749106109431,
       "link": null,
       "locked": false,
       "fontSize": 18,
@@ -239,12 +261,14 @@
       "containerId": null,
       "originalText": "ステップ3-4",
       "lineHeight": 1.25,
-      "baseline": 17
+      "baseline": 17,
+      "index": "a6",
+      "autoResize": true
     },
     {
       "type": "text",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 4,
+      "versionNonce": 1787865256,
       "isDeleted": false,
       "id": "step34-text2",
       "fillStyle": "hachure",
@@ -260,11 +284,13 @@
       "width": 180,
       "height": 20,
       "seed": 3008,
-      "groupIds": ["step34-group"],
+      "groupIds": [
+        "step34-group"
+      ],
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1,
+      "updated": 1749106109431,
       "link": null,
       "locked": false,
       "fontSize": 16,
@@ -275,12 +301,14 @@
       "containerId": null,
       "originalText": "アプリでSA指定",
       "lineHeight": 1.25,
-      "baseline": 14
+      "baseline": 14,
+      "index": "a7",
+      "autoResize": true
     },
     {
       "type": "text",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 4,
+      "versionNonce": 1118410200,
       "isDeleted": false,
       "id": "step34-text3",
       "fillStyle": "hachure",
@@ -296,11 +324,13 @@
       "width": 180,
       "height": 40,
       "seed": 3009,
-      "groupIds": ["step34-group"],
+      "groupIds": [
+        "step34-group"
+      ],
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1,
+      "updated": 1749106109431,
       "link": null,
       "locked": false,
       "fontSize": 12,
@@ -311,12 +341,14 @@
       "containerId": null,
       "originalText": "target_sa = \n\"sa-a@project-a\n.iam\"",
       "lineHeight": 1.25,
-      "baseline": 36
+      "baseline": 36,
+      "index": "a8",
+      "autoResize": true
     },
     {
       "type": "rectangle",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 4,
+      "versionNonce": 1187337128,
       "isDeleted": false,
       "id": "step57-box",
       "fillStyle": "solid",
@@ -332,20 +364,23 @@
       "width": 200,
       "height": 120,
       "seed": 3010,
-      "groupIds": ["step57-group"],
+      "groupIds": [
+        "step57-group"
+      ],
       "frameId": null,
       "roundness": {
         "type": 3
       },
-      "boundElements": ["arrow-34-57", "arrow-57-8"],
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1749106109431,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "a9"
     },
     {
       "type": "text",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 4,
+      "versionNonce": 1906907864,
       "isDeleted": false,
       "id": "step57-text1",
       "fillStyle": "hachure",
@@ -361,11 +396,13 @@
       "width": 120,
       "height": 25,
       "seed": 3011,
-      "groupIds": ["step57-group"],
+      "groupIds": [
+        "step57-group"
+      ],
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1,
+      "updated": 1749106109431,
       "link": null,
       "locked": false,
       "fontSize": 18,
@@ -376,12 +413,14 @@
       "containerId": null,
       "originalText": "ステップ5-7",
       "lineHeight": 1.25,
-      "baseline": 17
+      "baseline": 17,
+      "index": "aA",
+      "autoResize": true
     },
     {
       "type": "text",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 4,
+      "versionNonce": 757898920,
       "isDeleted": false,
       "id": "step57-text2",
       "fillStyle": "hachure",
@@ -397,11 +436,13 @@
       "width": 140,
       "height": 20,
       "seed": 3012,
-      "groupIds": ["step57-group"],
+      "groupIds": [
+        "step57-group"
+      ],
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1,
+      "updated": 1749106109431,
       "link": null,
       "locked": false,
       "fontSize": 16,
@@ -412,12 +453,14 @@
       "containerId": null,
       "originalText": "権限の借用",
       "lineHeight": 1.25,
-      "baseline": 14
+      "baseline": 14,
+      "index": "aB",
+      "autoResize": true
     },
     {
       "type": "text",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 4,
+      "versionNonce": 7339992,
       "isDeleted": false,
       "id": "step57-text3",
       "fillStyle": "hachure",
@@ -433,11 +476,13 @@
       "width": 180,
       "height": 40,
       "seed": 3013,
-      "groupIds": ["step57-group"],
+      "groupIds": [
+        "step57-group"
+      ],
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1,
+      "updated": 1749106109431,
       "link": null,
       "locked": false,
       "fontSize": 12,
@@ -448,12 +493,14 @@
       "containerId": null,
       "originalText": "IAM Credentials\nAPIでチェック→\nトークン発行",
       "lineHeight": 1.25,
-      "baseline": 36
+      "baseline": 36,
+      "index": "aC",
+      "autoResize": true
     },
     {
       "type": "rectangle",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 4,
+      "versionNonce": 2121435560,
       "isDeleted": false,
       "id": "step8-box",
       "fillStyle": "solid",
@@ -469,20 +516,23 @@
       "width": 200,
       "height": 120,
       "seed": 3014,
-      "groupIds": ["step8-group"],
+      "groupIds": [
+        "step8-group"
+      ],
       "frameId": null,
       "roundness": {
         "type": 3
       },
-      "boundElements": ["arrow-57-8"],
-      "updated": 1,
+      "boundElements": [],
+      "updated": 1749106109431,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "aD"
     },
     {
       "type": "text",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 4,
+      "versionNonce": 1058161880,
       "isDeleted": false,
       "id": "step8-text1",
       "fillStyle": "hachure",
@@ -498,11 +548,13 @@
       "width": 120,
       "height": 25,
       "seed": 3015,
-      "groupIds": ["step8-group"],
+      "groupIds": [
+        "step8-group"
+      ],
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1,
+      "updated": 1749106109431,
       "link": null,
       "locked": false,
       "fontSize": 18,
@@ -513,12 +565,14 @@
       "containerId": null,
       "originalText": "ステップ8",
       "lineHeight": 1.25,
-      "baseline": 17
+      "baseline": 17,
+      "index": "aE",
+      "autoResize": true
     },
     {
       "type": "text",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 4,
+      "versionNonce": 633541800,
       "isDeleted": false,
       "id": "step8-text2",
       "fillStyle": "hachure",
@@ -534,11 +588,13 @@
       "width": 160,
       "height": 20,
       "seed": 3016,
-      "groupIds": ["step8-group"],
+      "groupIds": [
+        "step8-group"
+      ],
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1,
+      "updated": 1749106109431,
       "link": null,
       "locked": false,
       "fontSize": 16,
@@ -549,12 +605,14 @@
       "containerId": null,
       "originalText": "リソースアクセス",
       "lineHeight": 1.25,
-      "baseline": 14
+      "baseline": 14,
+      "index": "aF",
+      "autoResize": true
     },
     {
       "type": "text",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 4,
+      "versionNonce": 1529080280,
       "isDeleted": false,
       "id": "step8-text3",
       "fillStyle": "hachure",
@@ -570,11 +628,13 @@
       "width": 180,
       "height": 40,
       "seed": 3017,
-      "groupIds": ["step8-group"],
+      "groupIds": [
+        "step8-group"
+      ],
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1,
+      "updated": 1749106109431,
       "link": null,
       "locked": false,
       "fontSize": 12,
@@ -585,12 +645,14 @@
       "containerId": null,
       "originalText": "SA-Aトークンで\nCloud Storage\nBigQuery等へ",
       "lineHeight": 1.25,
-      "baseline": 36
+      "baseline": 36,
+      "index": "aG",
+      "autoResize": true
     },
     {
       "type": "arrow",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 4,
+      "versionNonce": 1221214120,
       "isDeleted": false,
       "id": "arrow-12-34",
       "fillStyle": "hachure",
@@ -612,7 +674,7 @@
         "type": 2
       },
       "boundElements": [],
-      "updated": 1,
+      "updated": 1749106109431,
       "link": null,
       "locked": false,
       "startBinding": {
@@ -629,14 +691,21 @@
       "startArrowhead": null,
       "endArrowhead": "arrow",
       "points": [
-        [0, 0],
-        [40, 0]
-      ]
+        [
+          0,
+          0
+        ],
+        [
+          40,
+          0
+        ]
+      ],
+      "index": "aH"
     },
     {
       "type": "arrow",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 4,
+      "versionNonce": 800648920,
       "isDeleted": false,
       "id": "arrow-34-57",
       "fillStyle": "hachure",
@@ -658,7 +727,7 @@
         "type": 2
       },
       "boundElements": [],
-      "updated": 1,
+      "updated": 1749106109431,
       "link": null,
       "locked": false,
       "startBinding": {
@@ -675,14 +744,21 @@
       "startArrowhead": null,
       "endArrowhead": "arrow",
       "points": [
-        [0, 0],
-        [40, 0]
-      ]
+        [
+          0,
+          0
+        ],
+        [
+          40,
+          0
+        ]
+      ],
+      "index": "aI"
     },
     {
       "type": "arrow",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 4,
+      "versionNonce": 2008287912,
       "isDeleted": false,
       "id": "arrow-57-8",
       "fillStyle": "hachure",
@@ -704,7 +780,7 @@
         "type": 2
       },
       "boundElements": [],
-      "updated": 1,
+      "updated": 1749106109431,
       "link": null,
       "locked": false,
       "startBinding": {
@@ -721,14 +797,21 @@
       "startArrowhead": null,
       "endArrowhead": "arrow",
       "points": [
-        [0, 0],
-        [40, 0]
-      ]
+        [
+          0,
+          0
+        ],
+        [
+          40,
+          0
+        ]
+      ],
+      "index": "aJ"
     },
     {
       "type": "text",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 4,
+      "versionNonce": 358962136,
       "isDeleted": false,
       "id": "detail-title",
       "fillStyle": "hachure",
@@ -748,7 +831,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1,
+      "updated": 1749106109431,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -759,12 +842,14 @@
       "containerId": null,
       "originalText": "📝 詳細説明",
       "lineHeight": 1.25,
-      "baseline": 18
+      "baseline": 18,
+      "index": "aK",
+      "autoResize": true
     },
     {
       "type": "rectangle",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 6,
+      "versionNonce": 1599991000,
       "isDeleted": false,
       "id": "detail1-box",
       "fillStyle": "solid",
@@ -780,20 +865,21 @@
       "width": 450,
       "height": 100,
       "seed": 3022,
-      "groupIds": ["detail1-group"],
+      "groupIds": [],
       "frameId": null,
       "roundness": {
         "type": 3
       },
       "boundElements": [],
-      "updated": 1,
+      "updated": 1749106117334,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "aL"
     },
     {
       "type": "text",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 10,
+      "versionNonce": 616976040,
       "isDeleted": false,
       "id": "detail1-text",
       "fillStyle": "hachure",
@@ -803,17 +889,17 @@
       "opacity": 100,
       "angle": 0,
       "x": 60,
-      "y": 330,
+      "y": 335,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
-      "width": 430,
-      "height": 80,
+      "width": 269.4017639160156,
+      "height": 70,
       "seed": 3023,
-      "groupIds": ["detail1-group"],
+      "groupIds": [],
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1,
+      "updated": 1749106126449,
       "link": null,
       "locked": false,
       "fontSize": 14,
@@ -824,12 +910,14 @@
       "containerId": null,
       "originalText": "【ステップ1-2: 初回ログイン】\n$ gcloud auth application-default login\n→ ブラウザで認証\n→ 認証情報を ~/.config/gcloud/ に保存",
       "lineHeight": 1.25,
-      "baseline": 72
+      "baseline": 72,
+      "index": "aM",
+      "autoResize": true
     },
     {
       "type": "rectangle",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 6,
+      "versionNonce": 8515496,
       "isDeleted": false,
       "id": "detail2-box",
       "fillStyle": "solid",
@@ -845,20 +933,21 @@
       "width": 450,
       "height": 100,
       "seed": 3024,
-      "groupIds": ["detail2-group"],
+      "groupIds": [],
       "frameId": null,
       "roundness": {
         "type": 3
       },
       "boundElements": [],
-      "updated": 1,
+      "updated": 1749106130535,
       "link": null,
-      "locked": false
+      "locked": false,
+      "index": "aN"
     },
     {
       "type": "text",
-      "version": 1,
-      "versionNonce": 1,
+      "version": 10,
+      "versionNonce": 2071805144,
       "isDeleted": false,
       "id": "detail2-text",
       "fillStyle": "hachure",
@@ -868,17 +957,17 @@
       "opacity": 100,
       "angle": 0,
       "x": 560,
-      "y": 330,
+      "y": 335,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
-      "width": 430,
-      "height": 80,
+      "width": 233.64723205566406,
+      "height": 70,
       "seed": 3025,
-      "groupIds": ["detail2-group"],
+      "groupIds": [],
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1,
+      "updated": 1749106139389,
       "link": null,
       "locked": false,
       "fontSize": 14,
@@ -889,12 +978,129 @@
       "containerId": null,
       "originalText": "【ステップ5-7: 権限の借用】\n1. ADC → IAM Credentials API\n2. 「SA-Aの権限を借りたい」\n3. IAMが権限チェック → トークン発行",
       "lineHeight": 1.25,
-      "baseline": 72
+      "baseline": 72,
+      "index": "aO",
+      "autoResize": true
+    },
+    {
+      "type": "rectangle",
+      "version": 4,
+      "versionNonce": 452537256,
+      "isDeleted": false,
+      "id": "principle-box",
+      "fillStyle": "solid",
+      "strokeWidth": 3,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 50,
+      "y": 480,
+      "strokeColor": "#e03131",
+      "backgroundColor": "#ffe3e3",
+      "width": 950,
+      "height": 120,
+      "seed": 3026,
+      "groupIds": [
+        "principle-group"
+      ],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [],
+      "updated": 1749106109431,
+      "link": null,
+      "locked": false,
+      "index": "aP"
+    },
+    {
+      "type": "text",
+      "version": 4,
+      "versionNonce": 222216920,
+      "isDeleted": false,
+      "id": "principle-title",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 70,
+      "y": 500,
+      "strokeColor": "#c92a2a",
+      "backgroundColor": "transparent",
+      "width": 350,
+      "height": 30,
+      "seed": 3027,
+      "groupIds": [
+        "principle-group"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "boundElements": [],
+      "updated": 1749106109431,
+      "link": null,
+      "locked": false,
+      "fontSize": 20,
+      "fontFamily": 1,
+      "text": "⚠️ セキュリティ：最小権限の原則",
+      "textAlign": "left",
+      "verticalAlign": "middle",
+      "containerId": null,
+      "originalText": "⚠️ セキュリティ：最小権限の原則",
+      "lineHeight": 1.25,
+      "baseline": 18,
+      "index": "aQ",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "version": 4,
+      "versionNonce": 2099607208,
+      "isDeleted": false,
+      "id": "principle-text",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 70,
+      "y": 540,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "width": 900,
+      "height": 40,
+      "seed": 3028,
+      "groupIds": [
+        "principle-group"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "boundElements": [],
+      "updated": 1749106109431,
+      "link": null,
+      "locked": false,
+      "fontSize": 16,
+      "fontFamily": 1,
+      "text": "ステップ5-7では、SA-Aには必要最小限の権限のみを付与します。\n例：Cloud Storageの読み取りだけなら「ストレージオブジェクト閲覧者」権限のみ。プロジェクト編集者は×",
+      "textAlign": "left",
+      "verticalAlign": "middle",
+      "containerId": null,
+      "originalText": "ステップ5-7では、SA-Aには必要最小限の権限のみを付与します。\n例：Cloud Storageの読み取りだけなら「ストレージオブジェクト閲覧者」権限のみ。プロジェクト編集者は×",
+      "lineHeight": 1.25,
+      "baseline": 34,
+      "index": "aR",
+      "autoResize": true
     }
   ],
   "appState": {
     "gridSize": 20,
-    "viewBackgroundColor": "#ffffff"
+    "gridStep": 5,
+    "gridModeEnabled": false,
+    "viewBackgroundColor": "#ffffff",
+    "lockedMultiSelections": {}
   },
   "files": {}
 }

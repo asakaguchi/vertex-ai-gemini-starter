@@ -49,3 +49,6 @@ htmlcov/
 
 # その他
 *.log
+
+# Windows セキュリティ機能による自動生成ファイル
+*:Zone.Identifier
