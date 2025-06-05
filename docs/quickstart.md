@@ -18,7 +18,7 @@ GitHub テンプレートリポジトリも用意したので、コピーして 
 
 ### このプロジェクトの安全なアプローチ
 
-代わりに、Google が推奨する **Application Default Credentials (ADC)** を使用します。
+代わりに、Google が推奨する **Application Default Credentials（ADC）**を使用します。
 
 - ✅ **ゼロキー設計**：API キーやサービスアカウントキーが不要
 - ✅ **個人認証**：各開発者が自分の Google アカウントで安全に認証
@@ -27,9 +27,9 @@ GitHub テンプレートリポジトリも用意したので、コピーして 
 
 この方式により、**セキュリティを犠牲にすることなく、簡単に Vertex AI Gemini API を使い始められます**。
 
-> 💡 **ADC認証をもっと詳しく理解したい方へ**  
-> このクイックスタートで設定したADC認証の仕組みや、複数プロジェクトでの活用方法について、詳細な解説を用意しました。  
-> → [ADC認証でらくらく複数プロジェクト開発ガイド](adc-guide-with-diagrams.md)
+> 💡 **ADC 認証をもっと詳しく理解したい方へ**  
+> このクイックスタートで設定した ADC 認証の仕組みや、複数プロジェクトでの活用方法について、詳細な解説を用意しました。  
+> → [ADC 認証でらくらく複数プロジェクト開発ガイド](adc-guide-with-diagrams.md)
 
 ## まずは Vertex AI Gemini API って何？
 
@@ -109,7 +109,7 @@ gcloud services enable aiplatform.googleapis.com
 
 ```bash
 # テンプレートから新しいリポジトリを作成
-# 1. GitHubリポジトリページの画面右上にある緑色の「Use this template」ボタンをクリック
+# 1. GitHub リポジトリページの画面右上にある緑色の「Use this template」ボタンをクリック
 # 2. 「Create a new repository」をクリック
 # 3. リポジトリ名を入力して「Create repository」をクリック
 
@@ -156,8 +156,7 @@ cp .env.example .env
 uv sync
 
 # サンプルを実行
-python examples/simple_chat.py
-# または：uv run python examples/simple_chat.py
+uv run python examples/simple_chat.py
 ```
 
 たったこれだけで、Gemini と会話ができるようになります。
@@ -175,7 +174,7 @@ from vertexai.generative_models import GenerativeModel
 # 環境変数を読み込み
 load_dotenv()
 
-# プロジェクトIDとリージョンを環境変数から取得
+# プロジェクト ID とリージョンを環境変数から取得
 PROJECT_ID = os.getenv("GCP_PROJECT_ID")
 LOCATION = os.getenv("GCP_LOCATION", "us-central1")
 
@@ -257,19 +256,19 @@ gcloud auth application-default login
 【画像解析を試す】
 
 ```bash
-python examples/image_analysis.py --image-uri gs://your-bucket/photo.jpg
+uv run python examples/image_analysis.py --image-uri gs://your-bucket/photo.jpg
 ```
 
 【ストリーミングチャットを試す】
 
 ```bash
-python examples/streaming_chat.py
+uv run python examples/streaming_chat.py
 ```
 
 【モデル可用性チェック】
 
 ```bash
-python -m vertex_ai_gemini.models
+uv run python -m vertex_ai_gemini.models
 ```
 
 ## まとめ
@@ -280,9 +279,9 @@ Vertex AI Gemini API は、uv と GitHub テンプレートを使えば本当に
 
 ### より深く学びたい方へ
 
-基本的な使い方をマスターしたら、次のステップとして以下をお試しください：
+基本的な使い方をマスターしたら、次のステップとして以下をお試しください。
 
-- **複数プロジェクトでの開発**：[ADC認証の詳細ガイド](adc-guide-with-diagrams.md)で、複数の Google Cloud プロジェクトを効率的に切り替える方法を学べます
+- **複数プロジェクトでの開発**：[ADC 認証の詳細ガイド](adc-guide-with-diagrams.md)で、複数の Google Cloud プロジェクトを効率的に切り替える方法を学べます
 - **チーム開発**：同じ ADC 方式を使って、チーム全体で安全な開発環境を構築できます
 - **本格的なアプリケーション**：この基盤を使って、実際のプロダクトを構築してみましょう
 
