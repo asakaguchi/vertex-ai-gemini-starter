@@ -127,7 +127,7 @@ GCP_PROJECT_ID="project-b"    # 新しい設定
 
 ## 💡 Recite（要点をまとめる）
 
-### クイックスタートで体験したADCのメリット
+### クイックスタートで体験した ADC のメリット
 
 ### ADC のメリット（実感できたはず！）
 
@@ -170,7 +170,7 @@ GCP_PROJECT_ID="project-b"    # 新しい設定
 gcloud auth application-default login
 ```
 
-### プロジェクトAでの作業（クイックスタート方式）
+### プロジェクト A での作業（クイックスタート方式）
 
 ```bash
 # .env ファイル
@@ -178,7 +178,7 @@ GCP_PROJECT_ID="project-a"
 GEMINI_MODEL="gemini-1.5-flash"
 ```
 
-### プロジェクトBに切り替え（クイックスタート方式）
+### プロジェクト B に切り替え（クイックスタート方式）
 
 ```bash
 # .env ファイルを編集
