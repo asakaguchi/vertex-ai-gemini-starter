@@ -158,7 +158,7 @@ cp .env.example .env
 `.env` ファイルを編集して以下を設定してください：
 
 1. **GCP_PROJECT_ID**: あなたの Google Cloud プロジェクト ID
-2. **GEMINI_MODEL**: 使用したいモデル（デフォルトで `gemini-1.5-flash-002` が設定済み）
+2. **GEMINI_MODEL**: 使用したいモデル（デフォルトで `gemini-2.5-pro-preview-05-06` が設定済み）
 
 プロジェクト ID が分からない場合は、以下のコマンドで確認できます：
 
@@ -213,22 +213,23 @@ from vertexai.generative_models import GenerativeModel
 # 環境変数を読み込み
 load_dotenv()
 
-# プロジェクト ID とリージョンを環境変数から取得
+# 設定を環境変数から取得
 PROJECT_ID = os.getenv("GCP_PROJECT_ID")
 LOCATION = os.getenv("GCP_LOCATION", "us-central1")
+MODEL_NAME = os.getenv("GEMINI_MODEL")
 
 # 初期化
 vertexai.init(project=PROJECT_ID, location=LOCATION)
 
 # モデルを準備
-model = GenerativeModel("gemini-1.5-flash-001")
+model = GenerativeModel(MODEL_NAME)
 
 # 質問してみる
 response = model.generate_content("こんにちは！今日の気分はどう？")
 print(response.text)
 ```
 
-環境変数を使うことで、プロジェクト ID をコードにハードコーディングしなくて済みます。チームで共有する時も安心です。
+環境変数を使うことで、プロジェクト ID やモデル名をコードにハードコーディングしなくて済みます。チームで共有する時も安心で、モデルの変更も `.env` ファイルを編集するだけで簡単にできます。
 
 ### pyproject.tomlの構成
 
