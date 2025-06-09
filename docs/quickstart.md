@@ -107,14 +107,20 @@ gcloud services enable aiplatform.googleapis.com
 
 面倒な設定は抜きにして、すぐに動かしたいですよね。GitHub テンプレートリポジトリを用意しました。
 
-```bash
-# テンプレートから新しいリポジトリを作成
-# 1. GitHub リポジトリページの画面右上にある緑色の「Use this template」ボタンをクリック
-# 2. 「Create a new repository」をクリック
-# 3. リポジトリ名を入力して「Create repository」をクリック
+#### テンプレートから新しいリポジトリを作成
 
-# クローンしたら
-cd vertex-ai-gemini-starter
+1. [GitHub リポジトリページ](https://github.com/asakaguchi/vertex-ai-gemini-starter)にアクセス
+2. 画面右上にある緑色の「**Use this template**」ボタンをクリック
+3. 「**Create a new repository**」を選択
+4. リポジトリ名を入力（例：`my-gemini-project`）
+5. 「**Create repository**」をクリック
+
+#### ローカルにクローンして開始
+
+```bash
+# 自分のリポジトリをクローン
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+cd YOUR_REPO_NAME
 ```
 
 プロジェクト構成はこんな感じです。
@@ -124,42 +130,64 @@ vertex-ai-gemini-starter/
 ├── .gitignore
 ├── README.md
 ├── LICENSE
-├── setup.py            # パッケージ設定
-├── requirements.txt    # 依存関係
-├── pyproject.toml      # uv の設定ファイル
+├── CLAUDE.md           # 開発ガイドライン
+├── pyproject.toml      # 依存関係とツール設定
+├── .pre-commit-config.yaml  # コード品質チェック
 ├── .env.example        # 環境変数のサンプル
-├── vertex_ai_gemini/   # メインパッケージ
-│   ├── __init__.py
-│   ├── chat.py         # シンプルなチャット
-│   ├── streaming.py    # ストリーミングチャット
-│   ├── vision.py       # 画像解析
-│   └── models.py       # モデル確認
-├── examples/           # 実行可能なサンプル
-│   ├── simple_chat.py
-│   ├── streaming_chat.py
-│   └── image_analysis.py
+├── examples/           # すぐに実行できるサンプル
+│   ├── simple_chat.py  # 基本的なチャット
+│   ├── streaming_chat.py # ストリーミングチャット
+│   └── image_analysis.py # 画像解析
 ├── tests/              # テストファイル
-│   ├── __init__.py
-│   └── context.py
+│   ├── context.py
+│   ├── test_basic.py
+│   └── __init__.py
 └── docs/
-    └── quickstart.md
+    └── quickstart.md   # 詳細ガイド
 ```
 
 セットアップは超簡単です。
 
+#### 環境変数を設定
+
 ```bash
-# 環境変数を設定
 cp .env.example .env
-# .env ファイルを編集してプロジェクトIDを記入
+```
 
-# パッケージをインストール
+`.env` ファイルを編集してプロジェクト ID を記入してください。
+
+#### パッケージをインストール
+
+```bash
 uv sync
+```
 
-# サンプルを実行
+#### サンプルを実行
+
+```bash
 uv run python examples/simple_chat.py
 ```
 
 たったこれだけで、Gemini と会話ができるようになります。
+
+## 💡 プロジェクトの構成
+
+このプロジェクトはとてもシンプルです。`examples/` フォルダに3つのサンプルファイルがあるだけ：
+
+```text
+examples/
+├── simple_chat.py    # 基本的なチャット
+├── streaming_chat.py # ストリーミングチャット
+└── image_analysis.py # 画像解析
+```
+
+**使い方**:
+
+1. **最初**: `simple_chat.py` を実行してみる
+2. **慣れたら**: `streaming_chat.py` を試す  
+3. **発展**: `image_analysis.py` で画像解析
+
+各ファイルはそのまま実行できるので、コードをコピーして自分のプロジェクトに活用することもできます。
 
 ## サンプルコードの中身
 
@@ -249,27 +277,27 @@ rm ~/.config/gcloud/application_default_credentials.json
 gcloud auth application-default login
 ```
 
-## もっと楽しくするアイデア
+## 他のサンプルも試してみよう
 
-テンプレートリポジトリには、他にも楽しいサンプルを入れています。
+基本的なチャットができたら、他のサンプルも試してみましょう：
 
-【画像解析を試す】
+### ストリーミングチャット
 
-```bash
-uv run python examples/image_analysis.py --image-uri gs://your-bucket/photo.jpg
-```
-
-【ストリーミングチャットを試す】
+リアルタイムで応答が表示される対話的なチャットです：
 
 ```bash
 uv run python examples/streaming_chat.py
 ```
 
-【モデル可用性チェック】
+終了するには `exit` と入力してください。
 
-```bash
-uv run python -m vertex_ai_gemini.models
-```
+### 次のステップ
+
+Vertex AI Gemini API の基本をマスターしたら：
+
+- **画像解析**: `image_analysis.py` で画像を解析してみる
+- **コードの活用**: サンプルコードを自分のプロジェクトにコピーして改造
+- **本格的な開発**: この基盤を使ったアプリケーション構築
 
 ## まとめ
 
@@ -285,8 +313,13 @@ Vertex AI Gemini API は、uv と GitHub テンプレートを使えば本当に
 - **チーム開発**：同じ ADC 方式を使って、チーム全体で安全な開発環境を構築できます
 - **本格的なアプリケーション**：この基盤を使って、実際のプロダクトを構築してみましょう
 
-【テンプレートリポジトリ】
+### テンプレートリポジトリ
 
-[GitHub リポジトリ](https://github.com/asakaguchi/vertex-ai-gemini-starter)
+このプロジェクトを自分用にコピーするには：
 
-テンプレートとして使用する場合は、上記ページの画面右上にある緑色の「Use this template」ボタンをクリックして、「Create a new repository」を選択してください。
+1. [GitHub リポジトリ](https://github.com/asakaguchi/vertex-ai-gemini-starter)にアクセス
+2. 「**Use this template**」→「**Create a new repository**」を選択
+3. 自分のリポジトリ名を入力して作成
+4. ローカルにクローンして開発開始
+
+これで、すべての設定が完了した状態で開発を始められます。

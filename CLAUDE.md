@@ -88,3 +88,90 @@ uv run pytest          # テスト実行（存在する場合）
 - 全体を通じて日本語 UI とドキュメント
 - テキストとマルチモーダル（ビジョン）機能の両方をサポート
 - すべての例に適切な認証チェックと役立つエラーメッセージが含まれる
+
+## 開発ガイドライン
+
+### コア開発ルール
+
+1. **パッケージ管理**
+   - uv のみ使用、pip は絶対禁止
+   - インストール：`uv add package`
+   - ツール実行：`uv run tool`
+   - アップグレード：`uv add --dev package --upgrade-package package`
+   - 禁止：`uv pip install`、`@latest` 構文
+
+2. **コード品質**
+   - すべてのコードに型ヒント必須
+   - パブリック API には docstring 必須
+   - 関数は焦点を絞り、小さく保つ
+   - 既存のパターンに厳密に従う
+   - 行の長さ：最大 88 文字
+
+3. **テスト要件**
+   - フレームワーク：`uv run --frozen pytest`
+   - 非同期テスト：anyio を使用（asyncio ではない）
+   - カバレッジ：エッジケースとエラーをテスト
+   - 新機能にはテスト必須
+   - バグ修正には回帰テスト必須
+
+### Python ツール
+
+#### コードフォーマット
+
+1. **Ruff**
+   - フォーマット：`uv run --frozen ruff format .`
+   - チェック：`uv run --frozen ruff check .`
+   - 修正：`uv run --frozen ruff check . --fix`
+   - 重要な問題：
+     - 行の長さ（88 文字）
+     - インポート順序（I001）
+     - 未使用インポート
+   - 行の折り返し：
+     - 文字列：括弧を使用
+     - 関数呼び出し：適切なインデントで複数行
+     - インポート：複数行に分割
+
+2. **型チェック**
+   - ツール：`uv run --frozen pyright`
+   - 要件：
+     - Optional の明示的な None チェック
+     - 文字列の型絞り込み
+     - チェックが通れば、バージョン警告は無視可能
+
+3. **Pre-commit**
+   - 設定：`.pre-commit-config.yaml`
+   - 実行：git commit 時
+   - ツール：Prettier（YAML/JSON）、Ruff（Python）
+
+#### エラー解決
+
+1. **CI 失敗**
+   - 修正順序：
+     1. フォーマット
+     2. 型エラー
+     3. リンティング
+
+2. **よくある問題**
+   - 行の長さ：括弧で文字列を分割、複数行の関数呼び出し、インポートの分割
+   - 型：None チェック追加、文字列型の絞り込み、既存パターンに合わせる
+   - Pytest：anyio pytest マークが見つからない場合、コマンドの前に `PYTEST_DISABLE_PLUGIN_AUTOLOAD=""` を追加
+
+### Git とコミット
+
+- バグ修正や機能追加のコミット時：
+  ```bash
+  git commit --trailer "Reported-by:<name>"
+  ```
+- GitHub Issue 関連のコミット時：
+  ```bash
+  git commit --trailer "Github-Issue:#<number>"
+  ```
+- `co-authored-by` や使用ツールの言及は絶対禁止
+
+### プルリクエスト
+
+- 変更内容の詳細な説明を作成
+- 解決しようとする問題の高レベルな説明と解決方法に焦点
+- コードの詳細は明確さを追加する場合のみ記載
+- レビュアーに `jerome3o-anthropic` と `jspahrsummers` を追加
+- ツールの言及や `co-authored-by` は絶対禁止
