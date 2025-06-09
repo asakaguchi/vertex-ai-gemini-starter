@@ -35,9 +35,9 @@ def main():
     if not model_name:
         console.print("[red]エラー: GEMINI_MODEL が設定されていません。[/red]")
         console.print(".env ファイルに以下を追加してください。")
-        console.print("[dim]GEMINI_MODEL=gemini-1.5-flash-002[/dim]\n")
-        console.print("利用可能なモデルを確認するには：")
-        console.print("[cyan]uv run python src/check_models.py[/cyan]\n")
+        console.print("[dim]GEMINI_MODEL=gemini-1.5-flash[/dim]\n")
+        console.print("利用可能なモデル例：gemini-1.5-flash, gemini-2.0-flash, gemini-2.5-flash-preview-05-20")
+        console.print("利用可能なモデルを確認：[cyan]uv run python examples/check_models.py[/cyan]\n")
         sys.exit(1)
 
     # Vertex AI を初期化
@@ -61,8 +61,8 @@ def main():
         if "404" in str(e) and "not found" in str(e):
             console.print("\n[yellow]ヒント:[/yellow]")
             console.print("- 指定されたモデルが存在しない可能性があります")
-            console.print("- 利用可能なモデルを確認してください：")
-            console.print("  [cyan]uv run python src/check_models.py[/cyan]")
+            console.print("- 利用可能なモデル例：gemini-1.5-flash, gemini-2.0-flash, gemini-2.5-flash-preview-05-20")
+            console.print("- モデル確認：[cyan]uv run python examples/check_models.py[/cyan]")
 
 
 if __name__ == "__main__":

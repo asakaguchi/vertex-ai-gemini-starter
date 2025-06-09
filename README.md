@@ -36,7 +36,7 @@ cd YOUR_REPO_NAME
 cp .env.example .env
 ```
 
-`.env` ファイルを編集して `GCP_PROJECT_ID` を設定してから、パッケージをインストール：
+`.env` ファイルを編集して `GCP_PROJECT_ID` を設定してから（`GEMINI_MODEL` はデフォルト値が設定済み）、パッケージをインストール：
 
 ```bash
 uv sync
@@ -62,6 +62,9 @@ uv run python examples/simple_chat.py
 ```bash
 # ストリーミングチャット
 uv run python examples/streaming_chat.py
+
+# 利用可能なモデルを確認
+uv run python examples/check_models.py
 ```
 
 ## 📋 前提条件
@@ -85,7 +88,8 @@ vertex-ai-gemini-starter/
 ├── examples/            # すぐに実行できるサンプル
 │   ├── simple_chat.py   # 基本的なチャット
 │   ├── streaming_chat.py # ストリーミングチャット
-│   └── image_analysis.py # 画像解析
+│   ├── image_analysis.py # 画像解析
+│   └── check_models.py  # モデル可用性チェック
 ├── tests/               # テストファイル
 │   ├── context.py
 │   ├── test_basic.py

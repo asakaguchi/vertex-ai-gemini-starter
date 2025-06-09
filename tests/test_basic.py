@@ -18,7 +18,7 @@ def test_examples_exist():
     examples_dir = project_root / "examples"
     assert examples_dir.exists(), "Examples directory not found"
     
-    example_files = ["simple_chat.py", "streaming_chat.py", "image_analysis.py"]
+    example_files = ["simple_chat.py", "streaming_chat.py", "image_analysis.py", "check_models.py"]
     
     for example_file in example_files:
         example_path = examples_dir / example_file
@@ -28,7 +28,7 @@ def test_examples_exist():
 def test_example_imports():
     """Test that example files can be imported without errors."""
     examples_dir = project_root / "examples"
-    example_files = ["simple_chat", "streaming_chat", "image_analysis"]
+    example_files = ["simple_chat", "streaming_chat", "image_analysis", "check_models"]
     
     for example_name in example_files:
         example_path = examples_dir / f"{example_name}.py"

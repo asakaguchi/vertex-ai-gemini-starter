@@ -33,13 +33,12 @@ def analyze_image(image_uri: str, prompt: str = None):
     if not model_name:
         console.print("[red]エラー: GEMINI_MODEL が設定されていません。[/red]")
         console.print(".env ファイルに以下を追加してください。")
-        console.print("[dim]GEMINI_MODEL=gemini-1.5-flash-002[/dim]\n")
+        console.print("[dim]GEMINI_MODEL=gemini-1.5-flash[/dim]\n")
         console.print("画像解析には以下のモデルがおすすめです。")
-        console.print("- gemini-1.5-pro-002（高精度）")
-        console.print("- gemini-1.5-flash-002（高速）")
-        console.print("- gemini-2.0-flash-001（最新版）\n")
-        console.print("利用可能なモデルを確認するには：")
-        console.print("[cyan]uv run python src/check_models.py[/cyan]\n")
+        console.print("- gemini-2.5-pro-preview-06-05（最新・最高精度）")
+        console.print("- gemini-1.5-pro（高精度）")
+        console.print("- gemini-2.0-flash（高速）\n")
+        console.print("利用可能なモデルを確認：[cyan]uv run python examples/check_models.py[/cyan]\n")
         sys.exit(1)
 
     # Vertex AI を初期化

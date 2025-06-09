@@ -18,7 +18,7 @@ GitHub テンプレートリポジトリも用意したので、コピーして 
 
 ### このプロジェクトの安全なアプローチ
 
-代わりに、Google が推奨する **Application Default Credentials（ADC）**を使用します。
+代わりに、Google が推奨する **Application Default Credentials（ADC）** を使用します。
 
 - ✅ **ゼロキー設計**：API キーやサービスアカウントキーが不要
 - ✅ **個人認証**：各開発者が自分の Google アカウントで安全に認証
@@ -137,7 +137,8 @@ vertex-ai-gemini-starter/
 ├── examples/           # すぐに実行できるサンプル
 │   ├── simple_chat.py  # 基本的なチャット
 │   ├── streaming_chat.py # ストリーミングチャット
-│   └── image_analysis.py # 画像解析
+│   ├── image_analysis.py # 画像解析
+│   └── check_models.py # モデル可用性チェック
 ├── tests/              # テストファイル
 │   ├── context.py
 │   ├── test_basic.py
@@ -154,7 +155,16 @@ vertex-ai-gemini-starter/
 cp .env.example .env
 ```
 
-`.env` ファイルを編集してプロジェクト ID を記入してください。
+`.env` ファイルを編集して以下を設定してください：
+
+1. **GCP_PROJECT_ID**: あなたの Google Cloud プロジェクト ID
+2. **GEMINI_MODEL**: 使用したいモデル（デフォルトで `gemini-1.5-flash-002` が設定済み）
+
+プロジェクト ID が分からない場合は、以下のコマンドで確認できます：
+
+```bash
+gcloud config get-value project
+```
 
 #### パッケージをインストール
 
@@ -172,13 +182,14 @@ uv run python examples/simple_chat.py
 
 ## 💡 プロジェクトの構成
 
-このプロジェクトはとてもシンプルです。`examples/` フォルダに3つのサンプルファイルがあるだけ：
+このプロジェクトはとてもシンプルです。`examples/` フォルダに4つのサンプルファイルがあるだけ：
 
 ```text
 examples/
 ├── simple_chat.py    # 基本的なチャット
 ├── streaming_chat.py # ストリーミングチャット
-└── image_analysis.py # 画像解析
+├── image_analysis.py # 画像解析
+└── check_models.py   # モデル可用性チェック
 ```
 
 **使い方**:
